@@ -27,7 +27,7 @@
                             <hooks>
                                 <pre-commit>
                                     echo running validation build
-                                    exec mvn clean install
+                                    exec mvn clean install -Dmaven.test.skip=true
                                 </pre-commit>
                             </hooks>
                         </configuration>

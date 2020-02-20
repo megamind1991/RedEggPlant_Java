@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.rep.AppTest" time="0.039" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.rep.AppTest" time="0.038" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="D:\jdk\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\34521\AppData\Local\Temp\surefire1847308659340460997\surefirebooter5406864708299902799.jar C:\Users\34521\AppData\Local\Temp\surefire1847308659340460997 2020-02-20T10-17-11_407-jvmRun1 surefire5843656064212817038tmp surefire_04815328924603093480tmp"/>
+    <property name="sun.java.command" value="C:\Users\34521\AppData\Local\Temp\surefire1097405006255063566\surefirebooter5057946226416736876.jar C:\Users\34521\AppData\Local\Temp\surefire1097405006255063566 2020-02-20T10-44-51_969-jvmRun1 surefire1816317962849760135tmp surefire_0369482226962661559tmp"/>
     <property name="surefire.test.class.path" value="D:\idea\workspace\RedEggPlant_Java\javap-example\target\test-classes;D:\idea\workspace\RedEggPlant_Java\javap-example\target\classes;D:\maven\m2\junit\junit\4.11\junit-4.11.jar;D:\maven\m2\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\34521"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\34521\AppData\Local\Temp\surefire1847308659340460997\surefirebooter5406864708299902799.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\34521\AppData\Local\Temp\surefire1097405006255063566\surefirebooter5057946226416736876.jar"/>
     <property name="sun.boot.class.path" value="D:\jdk\jre\lib\resources.jar;D:\jdk\jre\lib\rt.jar;D:\jdk\jre\lib\sunrsasign.jar;D:\jdk\jre\lib\jsse.jar;D:\jdk\jre\lib\jce.jar;D:\jdk\jre\lib\charsets.jar;D:\jdk\jre\lib\jfr.jar;D:\jdk\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -51,16 +51,14 @@
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
-    <property name="idea.version2019.3.1" value="true"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="D:\jdk\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\svn\bin;D:\gitbash\Git\cmd;D:\jdk\bin;D:\maven\apache-maven-3.5.2-bin\apache-maven-3.5.2\bin;D:\nodejs\node-v12.13.1-win-x64\node-v12.13.1-win-x64;C:\Users\34521\AppData\Local\Microsoft\WindowsApps;D:\360zip\;D:\nodejs\node-v12.13.1-win-x64\node-v12.13.1-win-x64;;."/>
+    <property name="java.library.path" value="D:\jdk\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\gitbash\Git\mingw64\libexec\git-core;D:\gitbash\Git\mingw64\bin;D:\gitbash\Git\usr\bin;C:\Users\34521\bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;D:\svn\bin;D:\gitbash\Git\cmd;D:\jdk\bin;D:\maven\apache-maven-3.5.2-bin\apache-maven-3.5.2\bin;D:\nodejs\node-v12.13.1-win-x64\node-v12.13.1-win-x64;C:\Users\34521\AppData\Local\Microsoft\WindowsApps;D:\360zip;D:\nodejs\node-v12.13.1-win-x64\node-v12.13.1-win-x64;."/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="25.92-b14"/>
     <property name="java.ext.dirs" value="D:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="maven.repo.local" value="D:\maven\m2"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.rep.AppTest" time="0.002"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.rep.AppTest" time="0.001"/>
 </testsuite>
