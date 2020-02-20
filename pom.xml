@@ -13,26 +13,63 @@
     </modules>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sandbox</groupId>
+                    <artifactId>githook-maven-plugin</artifactId>
+                    <version>1.0.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                            <configuration>
+                                <hooks>
+                                    <pre-commit>
+                                        echo running validation build
+                                        exec mvn clean install -Dmaven.test.skip=true
+                                        exec mvn checkstyle:checkstyle
+                                    </pre-commit>
+                                </hooks>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <!--公共checkstyle标准配置，可以在子模块中覆盖，修改自定义选项-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <configLocation>config/checkstyle/google-checks-6.18.xml</configLocation>
+                        <consoleOutput>true</consoleOutput>
+                        <encoding>UTF-8</encoding>
+                        <failsOnError>false</failsOnError>
+                        <linkXRef>false</linkXRef>
+                        <skip>false</skip>
+                        <violationSeverity>error</violationSeverity>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>install</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>checkstyle</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!--所有子模块都要执行的plugin-->
         <plugins>
             <plugin>
-                <groupId>org.sandbox</groupId>
-                <artifactId>githook-maven-plugin</artifactId>
-                <version>1.0.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>install</goal>
-                        </goals>
-                        <configuration>
-                            <hooks>
-                                <pre-commit>
-                                    echo running validation build
-                                    exec mvn clean install -Dmaven.test.skip=true
-                                </pre-commit>
-                            </hooks>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
