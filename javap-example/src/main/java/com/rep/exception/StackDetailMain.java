@@ -2,7 +2,7 @@ package com.rep.exception;
 
 public class StackDetailMain {
     public static void main(String[] args) {
-        m1();/*from   ww  w  .j a  v a  2s.c o  m*/
+        m1();/* from ww w .j a v a 2s.c o m */
     }
 
     public static void m1() {

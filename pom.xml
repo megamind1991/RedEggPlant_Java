@@ -19,9 +19,9 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                     <configuration>
-                        <configLocation>config/checkstyle/google-checks-6.18.xml</configLocation>
+                        <configLocation>config/checkstyle/hbasesoft-check-1.0.xml</configLocation>
                         <consoleOutput>true</consoleOutput>
                         <encoding>UTF-8</encoding>
                         <failsOnError>false</failsOnError>
@@ -42,7 +42,8 @@
             </plugins>
         </pluginManagement>
 
-        <!--所有子模块都要执行的plugin-->
+
+
         <plugins>
             <plugin>
                 <groupId>org.sandbox</groupId>
@@ -56,7 +57,7 @@
                         <configuration>
                             <hooks>
                                 <pre-commit>
-                                    echo running validation build
+                                    echo git commit auto compile,findbugs,checkstyle,
                                     exec mvn clean install -Dmaven.test.skip=true
                                     exec mvn checkstyle:checkstyle
                                 </pre-commit>
@@ -74,13 +75,35 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.5</version>
                 <configuration>
-                    <threshold>High</threshold>
-                    <effort>Default</effort>
-                    <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <!-- findbugs xml输出路径-->
-                    <findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
+                    <!-- 设置分析工作的等级，可以为Min、Default和Max -->
+                    <effort>Low</effort>
+                    <!-- Low、Medium和High (Low最严格) High只扫描严重错误。建议用Medium-->
+                    <threshold>Medium</threshold>
+                    <failOnError>false</failOnError>
+                    <includeTests>true</includeTests>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>run-findbugs</id>
+                        <!-- 在package(也可设为compile) 阶段触发执行findbugs检查，比如执行 mvn clean package -->
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

@@ -2,13 +2,13 @@ package com.rep.base;
 
 public class Anagram {
 
-    //    /**/*from   ww  w .jav  a2s  .c  o  m*/
-//     * Tests whether the passed-in strings are anagrams --
-//     * containing the exact same number of each letter.
-//     * Punctuation, case, and order don't matter.
-//     *
-//     * @return true if the strings are anagrams; otherwise, false
-//     */
+    // /**/*from ww w .jav a2s .c o m*/
+    // * Tests whether the passed-in strings are anagrams --
+    // * containing the exact same number of each letter.
+    // * Punctuation, case, and order don't matter.
+    // *
+    // * @return true if the strings are anagrams; otherwise, false
+    // */
     public static boolean areAnagrams(String string1, String string2) {
 
         String workingCopy1 = removeJunk(string1);
@@ -27,8 +27,7 @@ public class Anagram {
     }
 
     /**
-     * Removes punctuation & spaces -- everything except
-     * letters from the passed-in string.
+     * Removes punctuation & spaces -- everything except letters from the passed-in string.
      *
      * @return a stripped copy of the passed-in string
      */
@@ -65,15 +64,15 @@ public class Anagram {
         String string2 = "Maid, clean soon!";
 
         System.out.println();
-        System.out.println("Testing whether the following "
-                + "strings are anagrams:");
+        System.out.println("Testing whether the following " + "strings are anagrams:");
         System.out.println("    String 1: " + string1);
         System.out.println("    String 2: " + string2);
         System.out.println();
 
         if (areAnagrams(string1, string2)) {
             System.out.println("They ARE anagrams!");
-        } else {
+        }
+        else {
             System.out.println("They are NOT anagrams!");
         }
         System.out.println();

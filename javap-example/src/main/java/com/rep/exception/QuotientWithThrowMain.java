@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class QuotientWithThrowMain {
     // demonstrates throwing an exception when a divide-by-zero occurs
     public static int quotient(int numerator, int denominator)
-            throws ArithmeticException
-    {/*from  w  ww  .j a  v  a  2s.  c  o m*/
+        throws ArithmeticException {/* from w ww .j a v a 2s. c o m */
         return numerator / denominator; // possible division by zero
     }
 
@@ -24,20 +23,19 @@ public class QuotientWithThrowMain {
                 int denominator = 0;
 
                 int result = quotient(numerator, denominator);
-                System.out.printf("%nResult: %d / %d = %d%n", numerator,
-                        denominator, result);
+                System.out.printf("%nResult: %d / %d = %d%n", numerator, denominator, result);
                 continueLoop = false; // input successful; end looping
-            } catch (InputMismatchException inputMismatchException) {
-                System.err.printf("%nException: %s%n",
-                        inputMismatchException);
-                scanner.nextLine(); // discard input so user can try again
-                System.out.printf(
-                        "You must enter integers. Please try again.%n%n");
-            } catch (ArithmeticException arithmeticException) {
-                System.err.printf("%nException: %s%n", arithmeticException);
-                System.out.printf(
-                        "Zero is an invalid denominator. Please try again.%n%n");
             }
-        } while (false);
+            catch (InputMismatchException inputMismatchException) {
+                System.err.printf("%nException: %s%n", inputMismatchException);
+                scanner.nextLine(); // discard input so user can try again
+                System.out.printf("You must enter integers. Please try again.%n%n");
+            }
+            catch (ArithmeticException arithmeticException) {
+                System.err.printf("%nException: %s%n", arithmeticException);
+                System.out.printf("Zero is an invalid denominator. Please try again.%n%n");
+            }
+        }
+        while (false);
     }
 }

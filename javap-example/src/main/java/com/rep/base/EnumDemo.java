@@ -6,27 +6,25 @@ import java.util.EnumSet;
 public class EnumDemo {
     public static void main(String[] args) {
         for (Level s : Level.values()) {
-            String name = s.name();//w ww  .j  a v  a 2s  . c o  m
+            String name = s.name();// w ww .j a v a 2s . c o m
             int ordinal = s.ordinal();
             int days = s.getValue();
-            System.out.println("name=" + name +
-                    ", ordinal=" + ordinal + ", days=" + days);
+            System.out.println("name=" + name + ", ordinal=" + ordinal + ", days=" + days);
         }
 
         for (Level1 s : Level1.values()) {
-            String name = s.name();//from   ww  w.j  a v  a  2 s. com
+            String name = s.name();// from ww w.j a v a 2 s. com
             String desc = s.toString();
             int ordinal = s.ordinal();
             int projectedTurnaroundDays = s.getValue();
             double projectedCost = s.getProjectedCost();
-            System.out.println("name=" + name + ", description=" + desc
-                    + ", ordinal=" + ordinal + ", turnaround days="
-                    + projectedTurnaroundDays + ", projected cost=" + projectedCost);
+            System.out.println("name=" + name + ", description=" + desc + ", ordinal=" + ordinal + ", turnaround days="
+                + projectedTurnaroundDays + ", projected cost=" + projectedCost);
         }
 
         Person.Gender m = Person.Gender.MALE;
         Person.Gender f = Person.Gender.FEMALE;
-        System.out.println(m);//from   www.  j a  v a  2 s.  c  o m
+        System.out.println(m);// from www. j a v a 2 s. c o m
         System.out.println(f);
 
         for (Command cmd : CommandList.values()) {
@@ -35,7 +33,7 @@ public class EnumDemo {
 
         // Get all constants of the Day enum
         EnumSet<Day> allDays = EnumSet.allOf(Day.class);
-        print(allDays, "All days: " );
+        print(allDays, "All days: ");
 
         // Get all constants from MONDAY to FRIDAY of the Day enum
         EnumSet<Day> weekDays = EnumSet.range(Day.MONDAY, Day.FRIDAY);
@@ -43,7 +41,6 @@ public class EnumDemo {
 
         EnumSet<Day> weekends = EnumSet.complementOf(weekDays);
         print(weekends, "Weekends: ");
-
 
         Direction field = Direction.WEST;
 
@@ -54,7 +51,6 @@ public class EnumDemo {
         System.out.println("field.isEqual(\"WEST\"'): " + field.equals("WEST"));
 
         System.out.println("field == WEST: " + (field == Direction.WEST));
-
 
         System.out.println("field.compareTo(WEST): " + field.compareTo(Direction.WEST));
         System.out.println("field.compareTo(PASSWORD): " + field.compareTo(Direction.East));
@@ -67,66 +63,57 @@ public class EnumDemo {
 
         // print all books in enum Book
         for (Book book : Book.values())
-            System.out.printf("%-10s%-45s%s%n", book,
-                    book.getTitle(), book.getCopyrightYear());
+            System.out.printf("%-10s%-45s%s%n", book, book.getTitle(), book.getCopyrightYear());
 
         System.out.printf("%nDisplay a range of enum constants:%n");
 
         // print first four books
         for (Book book : EnumSet.range(Book.Java, Book.Cpp))
-            System.out.printf("%-10s%-45s%s%n", book,
-                    book.getTitle(), book.getCopyrightYear());
+            System.out.printf("%-10s%-45s%s%n", book, book.getTitle(), book.getCopyrightYear());
     }
 
     public static void print(EnumSet<Day> days, String msg) {
         System.out.print(msg);
-        for(Day d : days) {
+        for (Day d : days) {
             System.out.print(d + " ");
         }
         System.out.println();
     }
 }
 
-enum Book//from www. j  a  v a 2  s.co  m
+enum Book// from www. j a v a 2 s.co m
 {
     // declare constants of enum type
-    Java("Java", "2015"),
-    C("C", "2013"),
-    Internet("Internet", "2012"),
-    Cpp("C++", "2014"),
-    VB("Visual Basic", "2014"),
-    CSharp("Visual C#", "2014");
+    Java("Java", "2015"), C("C", "2013"), Internet("Internet", "2012"), Cpp("C++", "2014"), VB("Visual Basic",
+        "2014"), CSharp("Visual C#", "2014");
 
     // instance fields
     private final String title;
+
     private final String copyrightYear;
 
     // enum constructor
-    Book(String title, String copyrightYear)
-    {
+    Book(String title, String copyrightYear) {
         this.title = title;
         this.copyrightYear = copyrightYear;
     }
 
     // accessor for field title
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
     // accessor for field copyrightYear
-    public String getCopyrightYear()
-    {
+    public String getCopyrightYear() {
         return copyrightYear;
     }
 }
 
-
-enum Direction {/*from ww w .  j  av a  2 s  .  c  om*/
+enum Direction {/* from ww w . j av a 2 s . c om */
     East, WEST, NORTH, SOUTH
 }
 
-enum Day {// w  ww  . j a va  2 s . co m
+enum Day {// w ww . j a va 2 s . co m
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
 }
 
@@ -139,15 +126,15 @@ class Person {
 enum Level {
     LOW(30), MEDIUM(15), HIGH(7), URGENT(1);
 
-    // Declare an instance variable  
+    // Declare an instance variable
     private int value;
 
-    // Declare a private constructor  
+    // Declare a private constructor
     private Level(int a) {
         this.value = a;
     }
 
-    // Declare a public method to get the turnaround days  
+    // Declare a public method to get the turnaround days
     public int getValue() {
         return value;
     }
@@ -177,6 +164,7 @@ enum Level1 {
 
     // Declare instance variables
     private String description;
+
     private int value;
 
     // Declare a private constructor
@@ -203,7 +191,7 @@ enum Level1 {
 }
 
 enum CommandList implements Command {
-    RUN {/* w  w  w  .j av  a2s .com*/
+    RUN {/* w w w .j av a2s .com */
         public void execute() {
             System.out.println("Running...");
         }

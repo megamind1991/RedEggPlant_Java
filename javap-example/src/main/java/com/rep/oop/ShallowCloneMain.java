@@ -11,7 +11,7 @@ public class ShallowCloneMain {
 
         // Change the value in original and it will change the value
         // for clone too because we have done shallow cloning
-        sc.setValue(200.00);// w  w  w.j a va2  s  .  c o  m
+        sc.setValue(200.00);// w w w.j a va2 s . c o m
 
         // Print the value in original and clone
         System.out.println("Original:" + sc.getValue());
@@ -39,7 +39,8 @@ class MyBaseClass implements Cloneable {
         try {
             // Call the clone() method of the Object class
             copy = (MyBaseClass) super.clone();
-        } catch (CloneNotSupportedException e) {
+        }
+        catch (CloneNotSupportedException e) {
             // If anything goes wrong during cloning, print the error details
             e.printStackTrace();
         }
@@ -66,7 +67,8 @@ class ShallowClone implements Cloneable {
         ShallowClone copy = null;
         try {
             copy = (ShallowClone) super.clone();
-        } catch (CloneNotSupportedException e) {
+        }
+        catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         return copy;

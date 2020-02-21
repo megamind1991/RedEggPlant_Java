@@ -2,9 +2,13 @@ package com.rep.hashcode;
 
 class Book {
     private String title;
+
     private String author;
+
     private int pageCount;
+
     private boolean hardCover;
+
     private double price;
 
     /* Must implement the equals() method too. */
@@ -14,7 +18,7 @@ class Book {
 
         // Use title
         code = (title == null ? 0 : title.hashCode());
-        hash = hash * 59 + code;/*from w ww  .ja v a 2 s.  com*/
+        hash = hash * 59 + code;/* from w ww .ja v a 2 s. com */
 
         // Use author
         code = (author == null ? 0 : author.hashCode());
@@ -48,22 +52,22 @@ class Book {
         if (author == null) {
             if (other.author != null)
                 return false;
-        } else if (!author.equals(other.author))
+        }
+        else if (!author.equals(other.author))
             return false;
         if (hardCover != other.hardCover)
             return false;
         if (pageCount != other.pageCount)
             return false;
-        if (Double.doubleToLongBits(price) != Double
-                .doubleToLongBits(other.price))
+        if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
             return false;
         if (title == null) {
             if (other.title != null)
                 return false;
-        } else if (!title.equals(other.title))
+        }
+        else if (!title.equals(other.title))
             return false;
         return true;
     }
-
 
 }

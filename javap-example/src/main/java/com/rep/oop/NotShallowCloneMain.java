@@ -19,7 +19,7 @@ public class NotShallowCloneMain {
         team2.setCity("Chicago");
         team2.setName("Fire");
 
-        Team team3 = team1;/*from w  w  w.  j a va  2s  .  c om*/
+        Team team3 = team1;/* from w w w. j a va 2s . c om */
         Team team4 = team2.clone();
 
         Team team5 = team1.shallowCopyClone();
@@ -50,13 +50,15 @@ public class NotShallowCloneMain {
 
         if (team1 == team3) {
             System.out.println("team1 and team3 are equal");
-        } else {
+        }
+        else {
             System.out.println("team1 and team3 are NOT equal");
         }
 
         if (team1 == team5) {
             System.out.println("team1 and team5 are equal");
-        } else {
+        }
+        else {
             System.out.println("team1 and team5 are NOT equal");
         }
 
@@ -67,6 +69,7 @@ public class NotShallowCloneMain {
 class Team implements Cloneable, Serializable {
 
     private String name;
+
     private String city;
 
     /**
@@ -120,9 +123,11 @@ class Team implements Cloneable, Serializable {
             ObjectInputStream ois = new ObjectInputStream(bais);
             obj = (Team) ois.readObject();
             ois.close();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException cnfe) {
+        }
+        catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         }
         return obj;
@@ -137,7 +142,8 @@ class Team implements Cloneable, Serializable {
 
         try {
             return (Team) super.clone();
-        } catch (CloneNotSupportedException ex) {
+        }
+        catch (CloneNotSupportedException ex) {
             return null;
         }
     }
@@ -150,9 +156,9 @@ class Team implements Cloneable, Serializable {
         }
         if (obj instanceof Team) {
             Team other = (Team) obj;
-            return other.getName().equals(this.getName())
-                    && other.getCity().equals(this.getCity());
-        } else {
+            return other.getName().equals(this.getName()) && other.getCity().equals(this.getCity());
+        }
+        else {
             return false;
         }
 

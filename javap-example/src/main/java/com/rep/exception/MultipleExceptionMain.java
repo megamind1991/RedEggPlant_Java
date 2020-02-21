@@ -7,11 +7,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class MultipleExceptionMain {
     public static void main(String[] args) {
-        try {// www.j av a  2  s .co  m
+        try {// www.j av a 2 s .co m
             doSomeWork();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -25,7 +27,8 @@ public class MultipleExceptionMain {
             while (!queue.isEmpty()) {
                 dos.writeUTF(queue.take());
             }
-        } catch (InterruptedException | IOException e) {
+        }
+        catch (InterruptedException | IOException e) {
             e.printStackTrace();
             throw e;
         }

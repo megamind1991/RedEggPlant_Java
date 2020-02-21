@@ -1,10 +1,11 @@
 package com.rep.exception;
 
 public class ChainedExceptionMain {
-    public static void main(String[] args) {/*from w  w  w  .  j ava  2 s . co  m*/
+    public static void main(String[] args) {/* from w w w . j ava 2 s . co m */
         try {
             method1();
-        } catch (Exception exception) // exceptions thrown from method1
+        }
+        catch (Exception exception) // exceptions thrown from method1
         {
             exception.printStackTrace();
 
@@ -28,7 +29,8 @@ public class ChainedExceptionMain {
     public static void method1() throws Exception {
         try {
             method2();
-        } catch (Exception exception) // exception thrown from method2
+        }
+        catch (Exception exception) // exception thrown from method2
         {
             throw new Exception("Exception thrown in method1", exception);
         }
@@ -38,7 +40,8 @@ public class ChainedExceptionMain {
     public static void method2() throws Exception {
         try {
             method3();
-        } catch (Exception exception) // exception thrown from method3
+        }
+        catch (Exception exception) // exception thrown from method3
         {
             throw new Exception("Exception thrown in method2", exception);
         }

@@ -12,92 +12,90 @@ import java.util.Arrays;
 
 public class BitmapEncoder {
     private final int BMP_SIZE_HEADER = 54;
+
     private final int BMP_SIZE_IMAGE_WIDTH = 4;
+
     private final int BMP_SIZE_PAYLOAD_LENGTH = 4;
+
     private final int BMP_SIZE_BMPUTIL_MAGIC = 4;
 
     private final int BMP_OFFSET_FILESIZE_BYTES = 2;
+
     private final int BMP_OFFSET_IMAGE_WIDTH = 18;
+
     private final int BMP_OFFSET_IMAGE_HEIGHT = 22;
+
     private final int BMP_OFFSET_IMAGE_DATA_BYTES = 34;
+
     private final int BMP_OFFSET_PAYLOAD_LENGTH = 38;
+
     private final int BMP_OFFSET_BMPUTIL_MAGIC = 42;
 
     private final byte UDEF = 0;
 
-    private final byte[] BMP_HEADER = new byte[]
-            {
-                    0x42, 0x4d,                            // signature, "BM"
-                    UDEF, UDEF, UDEF, UDEF,                // size in bytes, filled dynamically
-                    0x00, 0x00,                            // reserved, must be zero
-                    0x00, 0x00,                            // reserved, must be zero
-                    0x36, 0x00, 0x00, 0x00,                // offset to start of image data in bytes
-                    0x28, 0x00, 0x00, 0x00,                // size of BITMAPINFOHEADER structure, must be 40 (0x28)
-                    UDEF, UDEF, UDEF, UDEF,                // image width in pixels, filled dynamically
-                    UDEF, UDEF, UDEF, UDEF,                // image height in pixels, filled dynamically
-                    0x01, 0x00,                            // number of planes, must be 1
-                    0x18, 0x00,                            // number of bits per pixel (1, 4, 8, or 24) -> 24 = 0x18
-                    0x00, 0x00, 0x00, 0x00,                // compression type (0=none, 1=RLE-8, 2=RLE-4)
-                    UDEF, UDEF, UDEF, UDEF,                // size of image data in bytes (including padding)
-                    UDEF, UDEF, UDEF, UDEF,                // normally: horizontal resolution in pixels per meter (unreliable)
-                    UDEF, UDEF, UDEF, UDEF,                // vertical resolution in pixels per meter (unreliable)
-                    0x00, 0x00, 0x00, 0x00,                // number of colors in image, or zero
-                    0x00, 0x00, 0x00, 0x00,                // number of important colors, or zero
-            };
+    private final byte[] BMP_HEADER = new byte[] {
+        0x42, 0x4d, // signature, "BM"
+        UDEF, UDEF, UDEF, UDEF, // size in bytes, filled dynamically
+        0x00, 0x00, // reserved, must be zero
+        0x00, 0x00, // reserved, must be zero
+        0x36, 0x00, 0x00, 0x00, // offset to start of image data in bytes
+        0x28, 0x00, 0x00, 0x00, // size of BITMAPINFOHEADER structure, must be 40 (0x28)
+        UDEF, UDEF, UDEF, UDEF, // image width in pixels, filled dynamically
+        UDEF, UDEF, UDEF, UDEF, // image height in pixels, filled dynamically
+        0x01, 0x00, // number of planes, must be 1
+        0x18, 0x00, // number of bits per pixel (1, 4, 8, or 24) -> 24 = 0x18
+        0x00, 0x00, 0x00, 0x00, // compression type (0=none, 1=RLE-8, 2=RLE-4)
+        UDEF, UDEF, UDEF, UDEF, // size of image data in bytes (including padding)
+        UDEF, UDEF, UDEF, UDEF, // normally: horizontal resolution in pixels per meter (unreliable)
+        UDEF, UDEF, UDEF, UDEF, // vertical resolution in pixels per meter (unreliable)
+        0x00, 0x00, 0x00, 0x00, // number of colors in image, or zero
+        0x00, 0x00, 0x00, 0x00, // number of important colors, or zero
+    };
 
-    private final byte[] BMPUTIL_MAGIC = new byte[]
-            {
-                    0x30, 0x32, 0x30, 0x35
-            };
-
+    private final byte[] BMPUTIL_MAGIC = new byte[] {
+        0x30, 0x32, 0x30, 0x35
+    };
 
     public void encodeToBitmap(File srcFile, File destFile) {
         try {
-            this.encodeToBitmap(
-                    new FileInputStream(srcFile),
-                    srcFile.length(),
-                    new FileOutputStream(destFile));
+            this.encodeToBitmap(new FileInputStream(srcFile), srcFile.length(), new FileOutputStream(destFile));
             return;
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
-
 
     public void encodeToBitmap(byte[] srcBytes, File destFile) {
         try {
-            encodeToBitmap(
-                    new ByteArrayInputStream(srcBytes),
-                    srcBytes.length,
-                    new FileOutputStream(destFile));
+            encodeToBitmap(new ByteArrayInputStream(srcBytes), srcBytes.length, new FileOutputStream(destFile));
             return;
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
-
 
     public void encodeToBitmap(byte[] srcBytes, OutputStream destStream) {
         try {
-            encodeToBitmap(
-                    new ByteArrayInputStream(srcBytes),
-                    srcBytes.length,
-                    destStream);
+            encodeToBitmap(new ByteArrayInputStream(srcBytes), srcBytes.length, destStream);
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
-
 
     public void encodeToBitmap(InputStream srcStream, long srcStreamLength, OutputStream destStream) {
         try {
@@ -106,21 +104,16 @@ public class BitmapEncoder {
                 return;
             }
 
-
             int imageWidth = (int) Math.ceil(Math.sqrt((double) srcStreamLength / 3));
-            int imageHeight = (int) Math.ceil((double) srcStreamLength
-                    / (double) imageWidth / 3);
+            int imageHeight = (int) Math.ceil((double) srcStreamLength / (double) imageWidth / 3);
 
             int rowPadding = 4 - (imageWidth * 3 % 4);
-            int filesizeBytes = imageWidth * imageHeight * 3 + imageHeight * rowPadding
-                    + this.BMP_SIZE_HEADER;
+            int filesizeBytes = imageWidth * imageHeight * 3 + imageHeight * rowPadding + this.BMP_SIZE_HEADER;
 
             int imageBytesWithPadding = filesizeBytes - this.BMP_SIZE_HEADER;
             int payloadPadding = (int) (imageWidth * imageHeight * 3 - srcStreamLength);
 
-
             byte[] header = this.BMP_HEADER.clone();
-
 
             writeIntLE(header, this.BMP_OFFSET_FILESIZE_BYTES, filesizeBytes);
             writeIntLE(header, this.BMP_OFFSET_IMAGE_WIDTH, imageWidth);
@@ -128,9 +121,7 @@ public class BitmapEncoder {
             writeIntLE(header, this.BMP_OFFSET_IMAGE_DATA_BYTES, imageBytesWithPadding);
             writeIntLE(header, this.BMP_OFFSET_PAYLOAD_LENGTH, (int) srcStreamLength);
 
-            System.arraycopy(
-                    this.BMPUTIL_MAGIC, 0, header,
-                    this.BMP_OFFSET_BMPUTIL_MAGIC, this.BMPUTIL_MAGIC.length);
+            System.arraycopy(this.BMPUTIL_MAGIC, 0, header, this.BMP_OFFSET_BMPUTIL_MAGIC, this.BMPUTIL_MAGIC.length);
 
             destStream.write(header, 0, header.length);
             byte[] row = new byte[imageWidth * 3];
@@ -148,18 +139,20 @@ public class BitmapEncoder {
 
             if (destStream != null)
                 destStream.close();
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
-        } finally {
+        }
+        finally {
             srcStream = null;
             destStream = null;
         }
     }
-
 
     public byte[] decodeFromBitmap(InputStream srcStream) {
         byte[] result = null;
@@ -170,12 +163,12 @@ public class BitmapEncoder {
 
             result = destStream.toByteArray();
             return result;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
-
 
     public byte[] decodeFromBitmap(File srcFile) throws IOException {
 
@@ -187,29 +180,31 @@ public class BitmapEncoder {
 
             result = destStream.toByteArray();
             return result;
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return null;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
-
 
     public void decodeFromBitmap(File srcFile, File destFile) {
         try {
             decodeFromBitmap(new FileInputStream(srcFile), new FileOutputStream(destFile));
             return;
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
-
 
     public void decodeFromBitmap(InputStream srcStream, OutputStream destStream) {
         long bytesRead = 0;
@@ -219,7 +214,6 @@ public class BitmapEncoder {
             byte[] imageWidthBytes = new byte[this.BMP_SIZE_IMAGE_WIDTH];
             bytesRead += srcStream.read(imageWidthBytes);
             int imageWidth = toIntLE(imageWidthBytes);
-
 
             bytesRead += srcStream.skip(this.BMP_OFFSET_PAYLOAD_LENGTH - bytesRead);
             byte[] payloadLengthBytes = new byte[this.BMP_SIZE_PAYLOAD_LENGTH];
@@ -250,7 +244,8 @@ public class BitmapEncoder {
                         srcStream.skip(rowPaddingLength);
 
                         restOfPayload -= read;
-                    } else {
+                    }
+                    else {
                         destStream.write(row, 0, restOfPayload);
                         break;
                     }
@@ -264,19 +259,21 @@ public class BitmapEncoder {
                 destStream.close();
 
             return;
-        } catch (IOException ie) {
+        }
+        catch (IOException ie) {
             ie.printStackTrace();
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
-        } finally {
+        }
+        finally {
             srcStream = null;
             destStream = null;
         }
 
     }
-
 
     private void writeIntLE(byte[] bytes, int startoffset, int value) {
         try {
@@ -286,12 +283,12 @@ public class BitmapEncoder {
             bytes[startoffset + 3] = (byte) (value >>> 24);
 
             return;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             return;
         }
     }
-
 
     private int toIntLE(byte[] value) {
         return ((value[3] & 0xff) << 24) | ((value[2] & 0xff) << 16) | ((value[1] & 0xff) << 8) | (value[0] & 0xff);

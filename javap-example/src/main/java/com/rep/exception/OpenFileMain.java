@@ -4,10 +4,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class OpenFileMain {
-    public static void main(String[] args) {//from   w w  w  .ja  v  a  2 s.c  o  m
+    public static void main(String[] args) {// from w w w .ja v a 2 s.c o m
         try {
             openFile("C:/test.txt");
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
     }

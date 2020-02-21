@@ -54,7 +54,6 @@ public class RandomTest {
                 System.out.println();
         }
 
-
         // randomNumbers object will produce secure random numbers
         randomNumbers = new SecureRandom();
 
@@ -93,14 +92,12 @@ public class RandomTest {
         }
 
         System.out.println("Face\tFrequency"); // output headers
-        System.out.printf("1\t%d%n2\t%d%n3\t%d%n4\t%d%n5\t%d%n6\t%d%n",
-                frequency1, frequency2, frequency3, frequency4,
-                frequency5, frequency6);
+        System.out.printf("1\t%d%n2\t%d%n3\t%d%n4\t%d%n5\t%d%n6\t%d%n", frequency1, frequency2, frequency3, frequency4,
+            frequency5, frequency6);
 
-        // w ww  .j a v a  2 s. c o  m
+        // w ww .j a v a 2 s. c o m
         /*
-         * This method returns a positive double value greater than 0.0
-         * and less than 1.0
+         * This method returns a positive double value greater than 0.0 and less than 1.0
          */
 
         System.out.println("Random numbers between 0.0 and 1.0 are,");
@@ -115,7 +112,7 @@ public class RandomTest {
         for (int i = 0; i < 5; i++)
             System.out.println("Random Number [" + (i + 1) + "] : " + (int) (Math.random() * 100));
 
-        try {/*  www  .j av  a  2 s . c  o  m*/
+        try {/* www .j av a 2 s . c o m */
             // Create a secure random number generator
             SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
 
@@ -131,7 +128,8 @@ public class RandomTest {
             sr.setSeed(seed);
             SecureRandom sr2 = SecureRandom.getInstance("SHA1PRNG");
             sr2.setSeed(seed);
-        } catch (NoSuchAlgorithmException e) {
+        }
+        catch (NoSuchAlgorithmException e) {
         }
 
         int roll;
@@ -142,12 +140,10 @@ public class RandomTest {
             System.out.print(roll + " ");
         }
         System.out.println();
-    }//from  w  w  w . j  a  v  a 2s .  co m
-
+    }// from w w w . j a v a 2s . co m
 
     public static int randomInt(int low, int high) {
-        int result = (int) (Math.random()
-                * (high - low + 1)) + low;
+        int result = (int) (Math.random() * (high - low + 1)) + low;
         return result;
     }
 

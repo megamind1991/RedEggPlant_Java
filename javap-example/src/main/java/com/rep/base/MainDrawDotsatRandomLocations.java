@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 
 class DrawDotsatRandomLocations extends JComponent implements Runnable {
-    Thread t;//w w  w .ja  v a  2s .  com
+    Thread t;// w w w .ja v a 2s . com
 
     public void init() {
         t = new Thread(this);
@@ -18,7 +18,8 @@ class DrawDotsatRandomLocations extends JComponent implements Runnable {
             while (true) {
                 Thread.sleep(200);
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
         }
 
     }
@@ -37,8 +38,8 @@ class DrawDotsatRandomLocations extends JComponent implements Runnable {
 }
 
 public class MainDrawDotsatRandomLocations {
-  public static void main(String[] args) {
-      DrawDotsatRandomLocations drawDotsatRandomLocations = new DrawDotsatRandomLocations();
-//      Thread.r
-  }
+    public static void main(String[] args) {
+        DrawDotsatRandomLocations drawDotsatRandomLocations = new DrawDotsatRandomLocations();
+        // Thread.r
+    }
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class QuotientWithoutThrowMain {
     // demonstrates throwing an exception when a divide-by-zero occurs
-    public static int quotient(int numerator, int denominator) {/*www  .  j av a  2s  .  c  o  m*/
+    public static int quotient(int numerator, int denominator) {/* www . j av a 2s . c o m */
         return numerator / denominator; // possible division by zero
     }
 

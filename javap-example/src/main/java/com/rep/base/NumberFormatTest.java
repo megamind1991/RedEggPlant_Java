@@ -18,7 +18,7 @@ public class NumberFormatTest {
         // Parse a string to decimal number
         String str = "XY4,123.123";
         String pattern = "#,###.###";
-        formatter.applyPattern(pattern);/*from w w  w  .  j a v a2 s.c om*/
+        formatter.applyPattern(pattern);/* from w w w . j a v a2 s.c om */
 
         // Create a ParsePosition object to specify the first digit of
         // number in string. It is 4 in "XY4,123.983" and its index is 2.
@@ -37,7 +37,6 @@ public class NumberFormatTest {
         // Format the number
         String formattedNumber = formatter.format(value);
 
-        System.out.println("Number:" + value + ", Pattern:" + pattern +
-                ", Formatted Number:" + formattedNumber);
+        System.out.println("Number:" + value + ", Pattern:" + pattern + ", Formatted Number:" + formattedNumber);
     }
 }

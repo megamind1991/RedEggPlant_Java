@@ -1,10 +1,13 @@
 package com.rep.oop;
 
 public class Player {
-    /*  www .  j a  v a2s .  c  o  m*/
+    /* www . j a v a2s . c o m */
     private String firstName = null;
+
     private String lastName = null;
+
     private String position = null;
+
     private int status = -1;
 
     public Player() {

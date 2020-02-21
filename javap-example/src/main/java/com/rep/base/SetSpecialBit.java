@@ -1,6 +1,5 @@
 package com.rep.base;
 
-
 public class SetSpecialBit {
     public static void main(String[] argv) throws Exception {
         byte value = 2;
@@ -8,10 +7,11 @@ public class SetSpecialBit {
         boolean on = true;
         // 可以设置byte shot int long 的bit位的值 用于标签
         System.out.println(setBit(value, bit, on));
-    }//  w  w w  .j  a  v  a2 s.  com
+    }// w w w .j a v a2 s. com
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the base value
      * @param bit the bit number
      * @param on set it to on or not
@@ -29,6 +29,7 @@ public class SetSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the base value
      * @param bit the bit number
      * @param on set it to on or not
@@ -46,6 +47,7 @@ public class SetSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the base value
      * @param bit the bit number
      * @param on set it to on or not
@@ -63,6 +65,7 @@ public class SetSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the base value
      * @param bit the bit number
      * @param on set it to on or not

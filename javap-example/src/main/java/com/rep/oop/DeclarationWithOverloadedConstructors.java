@@ -1,12 +1,12 @@
 package com.rep.oop;
 
 public class DeclarationWithOverloadedConstructors {
-    public static void main(String[] args) {/*from w ww .j  ava 2s. c  o m*/
-        Time2 t1 = new Time2();       // 00:00:00
-        Time2 t2 = new Time2(2);      // 02:00:00
+    public static void main(String[] args) {/* from w ww .j ava 2s. c o m */
+        Time2 t1 = new Time2(); // 00:00:00
+        Time2 t2 = new Time2(2); // 02:00:00
         Time2 t3 = new Time2(21, 31); // 21:31:00
         Time2 t4 = new Time2(12, 25, 42); // 12:25:42
-        Time2 t5 = new Time2(t4);         // 12:25:42
+        Time2 t5 = new Time2(t4); // 12:25:42
 
         System.out.println("Constructed with:");
         displayTime("t1: all default arguments", t1);
@@ -18,23 +18,23 @@ public class DeclarationWithOverloadedConstructors {
         // attempt to initialize t6 with invalid values
         try {
             Time2 t6 = new Time2(27, 74, 99); // invalid values
-        } catch (IllegalArgumentException e) {
-            System.out.printf("%nException while initializing t6: %s%n",
-                    e.getMessage());
+        }
+        catch (IllegalArgumentException e) {
+            System.out.printf("%nException while initializing t6: %s%n", e.getMessage());
         }
     }
 
     // displays a Time2 object in 24-hour and 12-hour formats
     private static void displayTime(String header, Time2 t) {
-        System.out.printf("%s%n   %s%n   %s%n",
-                header, t.toUniversalString(), t.toString());
+        System.out.printf("%s%n   %s%n   %s%n", header, t.toUniversalString(), t.toString());
     }
 }
 
-
 class Time2 {
     private int hour; // 0 - 23
+
     private int minute; // 0 - 59
+
     private int second; // 0 - 59
 
     // Time2 no-argument constructor:
@@ -132,14 +132,12 @@ class Time2 {
 
     // convert to String in universal-time format (HH:MM:SS)
     public String toUniversalString() {
-        return String.format(
-                "%02d:%02d:%02d", getHour(), getMinute(), getSecond());
+        return String.format("%02d:%02d:%02d", getHour(), getMinute(), getSecond());
     }
 
     // convert to String in standard-time format (H:MM:SS AM or PM)
     public String toString() {
-        return String.format("%d:%02d:%02d %s",
-                ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12),
-                getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
+        return String.format("%d:%02d:%02d %s", ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12),
+            getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
     }
 }

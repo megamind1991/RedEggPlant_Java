@@ -1,7 +1,7 @@
 package com.rep.oop;
 
 public class CloneTest2 {
-    public static void main(String[] args) {/*from w w  w. ja  v a2  s  .  c  om*/
+    public static void main(String[] args) {/* from w w w. ja v a2 s . c om */
         Employee emp1 = new Employee("M", "A");
         emp1.setSalary(40000.0);
         emp1.address = new Address("1300 N. Main Street", "New York", "CA", "99999");
@@ -14,8 +14,7 @@ public class CloneTest2 {
         emp2.setLastName("S");
         emp2.address = new Address("2503 N. 6th Street", "L.A.", "CA", "93722");
 
-        System.out.println(
-                "**** after changing emp2 ****\n");
+        System.out.println("**** after changing emp2 ****\n");
         printEmployee(emp1);
         printEmployee(emp2);
 
@@ -32,7 +31,9 @@ public class CloneTest2 {
 
 class Employee implements Cloneable {
     private String lastName;
+
     private String firstName;
+
     private Double salary;
 
     public Address address;
@@ -72,24 +73,25 @@ class Employee implements Cloneable {
         try {
             emp = (Employee) super.clone();
             emp.address = (Address) address.clone();
-        } catch (CloneNotSupportedException e) {
-            return null;   // will never happen
+        }
+        catch (CloneNotSupportedException e) {
+            return null; // will never happen
         }
         return emp;
     }
 
     public String toString() {
-        return this.getClass().getName() + "["
-                + this.firstName + " "
-                + this.lastName + ", "
-                + this.salary + "]";
+        return this.getClass().getName() + "[" + this.firstName + " " + this.lastName + ", " + this.salary + "]";
     }
 }
 
 class Address implements Cloneable {
     private String street;
+
     private String city;
+
     private String state;
+
     private String zipCode;
 
     public Address() {
@@ -99,8 +101,7 @@ class Address implements Cloneable {
         this.zipCode = "";
     }
 
-    public Address(String street, String city,
-                   String state, String zipCode) {
+    public Address(String street, String city, String state, String zipCode) {
         this.street = street;
         this.city = city;
         this.state = state;
@@ -110,15 +111,13 @@ class Address implements Cloneable {
     public Object clone() {
         try {
             return super.clone();
-        } catch (CloneNotSupportedException e) {
-            return null;   // will never happen
+        }
+        catch (CloneNotSupportedException e) {
+            return null; // will never happen
         }
     }
 
     public String getAddress() {
-        return this.street + "\n"
-                + this.city + ", "
-                + this.state + " "
-                + this.zipCode;
+        return this.street + "\n" + this.city + ", " + this.state + " " + this.zipCode;
     }
 }

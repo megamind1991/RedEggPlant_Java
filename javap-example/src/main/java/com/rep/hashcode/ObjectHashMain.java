@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ObjectHashMain {
     public static void main(String[] args) {
-        /* w ww .java 2s.c  o m*/
+        /* w ww .java 2s.c o m */
         int hash = Objects.hash(10, 800, '\u21b9', "Hello");
         System.out.println("Hash Code is " + hash);
 

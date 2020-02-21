@@ -3,7 +3,7 @@ package com.rep.oop;
 public class CloneMain {
     public static void main(String[] args) {
         MyClass dh = new MyClass(100.00);
-        // Clone dh//from   w ww .j  a v a 2 s  .  c o  m
+        // Clone dh//from w ww .j a v a 2 s . c o m
         MyClass dhClone = (MyClass) dh.clone();
 
         // Print the values in original and clone
@@ -40,7 +40,8 @@ class MyClass implements Cloneable {
         try {
             // Call the clone() method of the Object class
             copy = (MyClass) super.clone();
-        } catch (CloneNotSupportedException e) {
+        }
+        catch (CloneNotSupportedException e) {
             // If anything goes wrong during cloning, print the error details
             e.printStackTrace();
         }

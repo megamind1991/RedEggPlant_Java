@@ -7,13 +7,15 @@ import javax.swing.JFrame;
 
 public class SierpinskiMain extends JFrame {
     public static final int WINDOW_SIZE = 512;
+
     public static final int THRESHOLD = 10; // stopping criterion for recursion
+
     public static int P1_x, P1_y, P2_x, P2_y, P3_x, P3_y;
 
     public SierpinskiMain() {
         super("Sierpinski");
 
-        setSize(WINDOW_SIZE, WINDOW_SIZE);//from   w w  w  .  ja  v  a 2  s  . c om
+        setSize(WINDOW_SIZE, WINDOW_SIZE);// from w w w . ja v a 2 s . c om
 
         // A simple triangle
         P1_x = (int) getSize().getWidth() / 2;

@@ -4,7 +4,7 @@ import java.awt.Point;
 
 public class PointMain {
     public static void main(String[] arguments) {
-        Point pt1, pt2;/*from   ww  w .j  av  a 2 s  .  c  o  m*/
+        Point pt1, pt2;/* from ww w .j av a 2 s . c o m */
         pt1 = new Point(100, 100);
         pt2 = pt1;
 

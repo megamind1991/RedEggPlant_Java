@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 import java.util.Arrays;
 
 public class FloatTest {
-    /*  ww  w. java2  s .co m*/
+    /* ww w. java2 s .co m */
     public static void main(String[] args) {
         // Round a float value to an Integer
         System.out.println(roundFloatToInt(new Float("8.837")));
@@ -20,7 +20,6 @@ public class FloatTest {
         System.out.println(float1.compareTo(float1));
         System.out.println(float3.compareTo(float2));
 
-
         System.out.println("-- Using compare --");
         System.out.println(Float.compare(float1, float3));
         System.out.println(Float.compare(float2, float3));
@@ -30,7 +29,7 @@ public class FloatTest {
         float total = 14000;
         System.out.println("Original investment: $" + total);
         // Inceases by 40 percent the first year
-        total = total + (total * .4F);//from  w w  w.  ja  v  a 2 s.c  o  m
+        total = total + (total * .4F);// from w w w. ja v a 2 s.c o m
         System.out.println("After one year: $" + total);
         // Loses $1,500 the second year
         total = total - 1500F;
@@ -55,15 +54,15 @@ public class FloatTest {
 
         if (difference == 0) {
             System.out.println("floatOne is equal to floatTwo.");
-        } else if (difference < 0) {
+        }
+        else if (difference < 0) {
             System.out.println("floatOne is less than floatTwo.");
-        } else if (difference > 0) {
+        }
+        else if (difference > 0) {
             System.out.println("floatOne is greater than floatTwo.");
-        }/*from w  w  w .j  ava  2s  .com*/
+        } /* from w w w .j ava 2s .com */
 
-        System.out.println("floatOne is "
-                + ((floatOne.equals(doubleOne)) ? "equal" : "not equal")
-                + " to doubleOne.");
+        System.out.println("floatOne is " + ((floatOne.equals(doubleOne)) ? "equal" : "not equal") + " to doubleOne.");
 
         // this program requires two
         // arguments on the command line
@@ -78,16 +77,16 @@ public class FloatTest {
             System.out.println("a * b = " + (a * b));
             System.out.println("a / b = " + (a / b));
             System.out.println("a % b = " + (a % b));
-        } else {//from  w  ww .ja va 2 s .  co  m
-            System.out.println("This program "
-                    + "requires two command-line arguments.");
+        }
+        else {// from w ww .ja va 2 s . co m
+            System.out.println("This program " + "requires two command-line arguments.");
         }
 
-        //1. Construct Float using constructor.
+        // 1. Construct Float using constructor.
         Float fObj1 = new Float("10.4");
-        System.out.println(fObj1);//from www  .  jav a 2 s .  com
+        System.out.println(fObj1);// from www . jav a 2 s . com
 
-        //2. Use valueOf method of Float class. This method is static.
+        // 2. Use valueOf method of Float class. This method is static.
         String str1 = "1.4";
         Float fObj2 = Float.valueOf(str1);
         System.out.println(fObj2);
@@ -96,20 +95,22 @@ public class FloatTest {
         float f = Float.parseFloat(str2);
         System.out.println(f);
 
-
-        float[] floatArray1 = new float[]{9.4f, 3.4f, 5.1f};
-        float[] floatArray2 = new float[]{9.4f, 3.4f, 5.1f};
-        //w  w  w  . j a v a 2  s.  c o  m
+        float[] floatArray1 = new float[] {
+            9.4f, 3.4f, 5.1f
+        };
+        float[] floatArray2 = new float[] {
+            9.4f, 3.4f, 5.1f
+        };
+        // w w w . j a v a 2 s. c o m
         boolean blnResult = Arrays.equals(floatArray1, floatArray2);
         System.out.println("Are two float arrays equal ? : " + blnResult);
 
+        float x = 0.1f;
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumFractionDigits(10);/* from ww w . ja v a2s. c om */
 
-    float x = 0.1f;
-    NumberFormat nf = NumberFormat.getNumberInstance();
-    nf.setMinimumFractionDigits(10);/*from ww  w  .  ja  v a2s. c om*/
-
-    System.out.println(x);
-    System.out.println(nf.format(x));
+        System.out.println(x);
+        System.out.println(nf.format(x));
     }
 
     /**

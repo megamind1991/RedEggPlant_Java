@@ -6,10 +6,11 @@ public class HaveSpecialBit {
         int bit = 2;
         // 判断一个字节的某一位是否有值
         System.out.println(getBit(value, bit));
-    }/*from  ww  w  .  j  a v  a 2s  . c  o  m*/
+    }/* from ww w . j a v a 2s . c o m */
 
     /**
      * gets the specified bit to a value
+     * 
      * @param value the value to check
      * @param bit the bit number
      * @return if this bit is on
@@ -23,6 +24,7 @@ public class HaveSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the value to check
      * @param bit the bit number
      * @return if this bit is on
@@ -36,6 +38,7 @@ public class HaveSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the value to check
      * @param bit the bit number
      * @return if this bit is on
@@ -49,6 +52,7 @@ public class HaveSpecialBit {
 
     /**
      * sets the specified bit to a value
+     * 
      * @param value the value to check
      * @param bit the bit number
      * @return if this bit is on

@@ -4,19 +4,19 @@ public class AutoCloseAbleTest {
     public static void main(String[] args) {
         // Its close() method will be called automatically */
         try (MyResource mr = new MyResource(2, false)) {
-            mr.use();/*  ww  w  .  j  av  a 2 s.  co  m*/
+            mr.use();/* ww w . j av a 2 s. co m */
             mr.use();
         }
-//        try (MyResource mr = new MyResource(2, true)) {
-//            mr.use();
-//            mr.use();
-//        }
+        // try (MyResource mr = new MyResource(2, true)) {
+        // mr.use();
+        // mr.use();
+        // }
     }
 }
 
-
 class MyResource implements AutoCloseable {
     private int score;
+
     private boolean errorOut;
 
     public MyResource(int level, boolean exceptionOnClose) {

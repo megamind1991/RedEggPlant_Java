@@ -5,9 +5,10 @@ import java.io.PrintWriter;
 
 public class StackExceptionMain {
     public static void main(String[] args) {
-        try {/*ww w .j a  va  2s  .  co  m*/
+        try {/* ww w .j a va 2s . co m */
             m1();
-        } catch (MyTwoException e) {
+        }
+        catch (MyTwoException e) {
             String str = getStackTrace(e);
 
             // Print the stack trace to the standard output

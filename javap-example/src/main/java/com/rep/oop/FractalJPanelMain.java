@@ -13,13 +13,15 @@ import javax.swing.JPanel;
 
 class FractalJPanel extends JPanel {
     private Color color; // stores color used to draw fractal
+
     private int level; // stores current level of fractal
 
     private static final int WIDTH = 400; // defines width of JPanel
+
     private static final int HEIGHT = 400; // defines height of JPanel
 
     public FractalJPanel(int currentLevel) {
-        color = Color.BLUE;//from ww  w .  java 2 s.c o  m
+        color = Color.BLUE;// from ww w . java 2 s.c o m
         level = currentLevel; // set initial fractal level
         setBackground(Color.WHITE);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -68,13 +70,17 @@ class FractalJPanel extends JPanel {
 
 public class FractalJPanelMain extends JFrame {
     private static final int WIDTH = 400; // define width of GUI
+
     private static final int HEIGHT = 480; // define height of GUI
+
     private static final int MIN_LEVEL = 0, MAX_LEVEL = 15;
 
-    private JButton changeColorJButton, increaseLevelJButton,
-            decreaseLevelJButton;
+    private JButton changeColorJButton, increaseLevelJButton, decreaseLevelJButton;
+
     private JLabel levelJLabel;
+
     private FractalJPanel drawSpace;
+
     private JPanel mainJPanel, controlJPanel;
 
     public FractalJPanelMain() {
@@ -84,8 +90,7 @@ public class FractalJPanelMain extends JFrame {
         changeColorJButton = new JButton("Color");
         controlJPanel.add(changeColorJButton);
         changeColorJButton.addActionListener(e -> {
-            Color color = JColorChooser.showDialog(FractalJPanelMain.this, "Choose a color",
-                    Color.BLUE);
+            Color color = JColorChooser.showDialog(FractalJPanelMain.this, "Choose a color", Color.BLUE);
 
             // set default color, if no color is returned
             if (color == null)
@@ -99,16 +104,16 @@ public class FractalJPanelMain extends JFrame {
         decreaseLevelJButton = new JButton("Decrease Level");
         controlJPanel.add(decreaseLevelJButton);
         decreaseLevelJButton.addActionListener(e -> {
-                    int level = drawSpace.getLevel();
-                    --level;
+            int level = drawSpace.getLevel();
+            --level;
 
-                    // modify level if possible
-                    if ((level >= MIN_LEVEL) && (level <= MAX_LEVEL)) {
-                        levelJLabel.setText("Level: " + level);
-                        drawSpace.setLevel(level);
-                        repaint();
-                    }
-                }
+            // modify level if possible
+            if ((level >= MIN_LEVEL) && (level <= MAX_LEVEL)) {
+                levelJLabel.setText("Level: " + level);
+                drawSpace.setLevel(level);
+                repaint();
+            }
+        }
 
         );
 

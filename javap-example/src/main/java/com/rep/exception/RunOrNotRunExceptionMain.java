@@ -2,13 +2,14 @@ package com.rep.exception;
 
 public class RunOrNotRunExceptionMain {
     public static void main(String[] args) {
-        Object chatServer = null;//from w w w.  j  ava  2  s.  c  o  m
+        Object chatServer = null;// from w w w. j ava 2 s. c o m
 
-      // Throwable -> Error/Exception -> RuntimeException/IOException....
-      // exception 是必须捕获的异常
+        // Throwable -> Error/Exception -> RuntimeException/IOException....
+        // exception 是必须捕获的异常
         try {
             call("Hello, how are you?");
-        } catch (MyNoRunException e) {
+        }
+        catch (MyNoRunException e) {
             System.out.println("Caught a connection unavailable Exception!");
         }
 
@@ -19,8 +20,7 @@ public class RunOrNotRunExceptionMain {
         throw new MyNoRunException2("Chat server is empty");
     }
 
-    private static void call(String chatMessage)
-            throws MyNoRunException {
+    private static void call(String chatMessage) throws MyNoRunException {
         throw new MyNoRunException("Can't find the chat server");
     }
 

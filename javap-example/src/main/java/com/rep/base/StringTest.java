@@ -7,11 +7,12 @@ import java.util.regex.Pattern;
 public class StringTest {
     static String LowerToUpper(String s) {
         String result = "";
-        char c;// w ww . j ava 2  s  . c om
+        char c;// w ww . j ava 2 s . c om
         for (int i = 0; i < s.length(); i++) {
             if (Character.isAlphabetic(s.charAt(i))) {
                 c = (char) (s.charAt(i) - 32); // 32=2^5
-            } else {
+            }
+            else {
                 c = s.charAt(i);
             }
             result += c; // concatenation, append c to result
@@ -52,7 +53,7 @@ public class StringTest {
 
     public static void main(String[] args) {
 
-        System.out.println(LowerToUpper("java2s.com"));    // Create two string objects
+        System.out.println(LowerToUpper("java2s.com")); // Create two string objects
 
         String str1 = new String();
         String str2 = new String("Hello");
@@ -79,19 +80,18 @@ public class StringTest {
         String matchStr = "great";
         for (int i = 0; i <= sentence.length() - 1; i++) {
             if (sentence.regionMatches(i, matchStr, 0, matchStr.length())) {
-                System.out.println("The sentence: '" + sentence + "' matches: '" +
-                        matchStr + "' beginning at index: " + i);
+                System.out
+                    .println("The sentence: '" + sentence + "' matches: '" + matchStr + "' beginning at index: " + i);
             }
         }
 
         String myString = " This is a String that contains whitespace.   ";
-        //from w ww .  j  av a 2s. c  om
+        // from w ww . j av a 2s. c om
         System.out.println(myString);
         System.out.println(myString.trim());
 
-
         String str = "This String will change case.";
-        //from w  w w.  j  av a  2  s  . c om
+        // from w w w. j av a 2 s . c om
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowerCase());
         System.out.println(str.toUpperCase(Locale.ITALIAN));
@@ -106,19 +106,19 @@ public class StringTest {
         str = "Here";
 
         boolean result = str.matches("Here");
-        System.out.println(result);//from  w  w w. j  a  v a 2s.  c  om
+        System.out.println(result);// from w w w. j a v a 2s. c om
 
         result = str.matches("Here is a long String...");
         System.out.println(result);
         str = "true";
         // This will test against both upper & lower case "T"...this will be TRUE
         result = str.matches("[Tt]rue");
-        System.out.println(result);//from w  w w .jav a2  s. com
+        System.out.println(result);// from w w w .jav a2 s. com
 
         str = "true";
         // This will test against both upper & lower case "T"...this will be TRUE
         result = str.matches("[Tt]rue|[Ff]alse]");
-        System.out.println(result);//w  ww.  j  av  a  2  s.com
+        System.out.println(result);// w ww. j av a 2 s.com
 
         str = "I love Java 8!";
         result = str.matches("I love Java [0-9]!");
@@ -128,7 +128,7 @@ public class StringTest {
         str = "I love Java 8!";
 
         result = str.matches("I love .*[ 0-9]!");
-        System.out.println(result); /*  w  ww  . j a v  a2 s  .  c o  m*/
+        System.out.println(result); /* w ww . j a v a2 s . c o m */
 
         // The following String also matches.
         str = "I love Jython 2.5.4!";
@@ -141,7 +141,7 @@ public class StringTest {
 
         Pattern pattern = Pattern.compile("I love .*[ 0-9]!");
         Matcher matcher = pattern.matcher(str);
-        result = matcher.matches(); /*from ww w . java 2  s  .co  m*/
+        result = matcher.matches(); /* from ww w . java 2 s .co m */
 
         System.out.println(result);
         str = "I love Java 8!  Java 8 is the 8th version.";
@@ -153,21 +153,23 @@ public class StringTest {
         System.out.println(matcher.matches());
         System.out.println("Replacement: " + matcher.replaceAll("7"));
 
-
         String filename = "test.java";
         System.out.println("Finding file type of: " + filename);
         if (filename.endsWith(".txt")) {
             System.out.println("Text file");
-        } else if (filename.endsWith(".doc")) {
+        }
+        else if (filename.endsWith(".doc")) {
             System.out.println("Document file");
-        } else if (filename.endsWith(".xls")) {
+        }
+        else if (filename.endsWith(".xls")) {
             System.out.println("Excel file");
-        } else if (filename.endsWith(".java")) {
+        }
+        else if (filename.endsWith(".java")) {
             System.out.println("Java source file");
-        } else {
+        }
+        else {
             System.out.println("Other type of file");
         }
-
 
         double temperature = 8.6;
         String temperatureString = "The current temperature is %.1f degrees Fahrenheit.";
@@ -186,9 +188,11 @@ public class StringTest {
         String[] fields = jaText.split("\\s", 3);
         for (String field : fields) {
             System.out.printf("Split: %s\n", field);
-        }/*from   w ww. j  a  va2s.  co  m*/
+        } /* from w ww. j a va2s. co m */
 
-        char[] charArray = {'b', 'i', 'r', 't', 'h', ' ', 'd', 'a', 'y'};
+        char[] charArray = {
+            'b', 'i', 'r', 't', 'h', ' ', 'd', 'a', 'y'
+        };
         String s = new String("hello");
 
         // use String constructors
@@ -197,9 +201,7 @@ public class StringTest {
         String s3 = new String(charArray);
         String s4 = new String(charArray, 6, 3);
 
-        System.out.printf(
-                "s1 = %s\ns2 = %s\ns3 = %s\ns4 = %s\n", s1, s2, s3, s4);
-
+        System.out.printf("s1 = %s\ns2 = %s\ns3 = %s\ns4 = %s\n", s1, s2, s3, s4);
 
         s1 = new String("hello");
         s2 = "this is a test";
@@ -210,21 +212,19 @@ public class StringTest {
         if (s3.regionMatches(0, s4, 0, 5))
             System.out.println("First 5 characters of s3 and s4 match");
         else
-            System.out.println(
-                    "First 5 characters of s3 and s4 do not match");
+            System.out.println("First 5 characters of s3 and s4 do not match");
 
         // test regionMatches (ignore case)
         if (s3.regionMatches(true, 0, s4, 0, 5))
-            System.out.println(
-                    "First 5 characters of s3 and s4 match with case ignored");
+            System.out.println("First 5 characters of s3 and s4 match with case ignored");
         else
-            System.out.println(
-                    "First 5 characters of s3 and s4 do not match");
+            System.out.println("First 5 characters of s3 and s4 do not match");
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] array = {
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
         String results = someMethod(array, 0);
         System.out.println(results);
-
 
         String searchMe = "Green Eggs and Ham";
         String findMe = "Eggs";
@@ -233,14 +233,13 @@ public class StringTest {
         boolean foundIt = false;
         for (int i = 0; i <= (searchMeLength - findMeLength); i++) {
             if (searchMe.regionMatches(i, findMe, 0, findMeLength)) {
-                foundIt = true;/*from  ww w  .  j a v  a 2s. c  o  m*/
+                foundIt = true;/* from ww w . j a v a 2s. c o m */
                 System.out.println(searchMe.substring(i, i + findMeLength));
                 break;
             }
         }
         if (!foundIt)
             System.out.println("No match found.");
-
 
     }
 
@@ -253,18 +252,16 @@ public class StringTest {
         Pattern pattern = Pattern.compile(patternStr);
         Matcher matcher = pattern.matcher(inputStr);
         return matcher.replaceAll(replaceStr);
-    }/*from  w  w  w  .j  av a2 s.  co m*/
+    }/* from w w w .j av a2 s. co m */
 
-
-    public static String someMethod(int[] array2, int x) {/*from w  ww  .  j  a v  a 2  s. c  o m*/
+    public static String someMethod(int[] array2, int x) {/* from w ww . j a v a 2 s. c o m */
         if (x < array2.length) {
-            String format = String.format(
-                    "%s %d ", someMethod(array2, x + 1), array2[x]);
+            String format = String.format("%s %d ", someMethod(array2, x + 1), array2[x]);
             System.out.println(format);
             return format;
-        } else
+        }
+        else
             return "";
     }
-
 
 }

@@ -2,8 +2,8 @@ package com.rep.oop;
 
 public class HannuotaMain {
     // recursively move disks between towers
-    public static void solveTowers(int disks, int sourcePeg,
-                                   int destinationPeg, int tempPeg) {//  w w w  . j a v a  2s . c om
+    public static void solveTowers(int disks, int sourcePeg, int destinationPeg, int tempPeg) {// w w w . j a v a 2s . c
+                                                                                               // om
         // base case -- only one disk to move
         if (disks == 1) {
             System.out.printf("%n%d --> %d", sourcePeg, destinationPeg);

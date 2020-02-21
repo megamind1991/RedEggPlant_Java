@@ -1,13 +1,13 @@
 package com.rep.oop;
 
-public class ZipCodeTest{
+public class ZipCodeTest {
 
     public static void main(String[] arguments) {
         ZipCode zip1 = new ZipCode("444344");
         ZipCode zip2 = new ZipCode("11111");
         if (zip1.getZipCode() != "") {
             System.out.println("Zip1: " + zip1.getZipCode());
-        }/*ww  w. ja  v a  2s .com*/
+        } /* ww w. ja v a 2s .com */
         if (zip2.getZipCode() != "") {
             System.out.println("Zip2: " + zip2.getZipCode());
         }

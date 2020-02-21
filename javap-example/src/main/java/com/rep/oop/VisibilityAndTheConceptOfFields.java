@@ -2,9 +2,10 @@ package com.rep.oop;
 
 class TestClass {
     private long visibleOnlyInThisClass;
+
     double visibleFromEntirePackage;
 
-    /* w  w  w  .j av a 2  s . com*/
+    /* w w w .j av a 2 s . com */
     void setLong(long val) {
         visibleOnlyInThisClass = val;
     }
