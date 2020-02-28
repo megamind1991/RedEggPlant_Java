@@ -1,7 +1,7 @@
 package com.rep.exception;
 
-import java.io.StringWriter;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 
 public class StackExceptionMain {
     public static void main(String[] args) {

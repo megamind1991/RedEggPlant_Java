@@ -1,7 +1,5 @@
 package com.rep.innerclass;
 
-import java.util.*;
-
 public class ProtectedClass1 {
     protected InnerClass1 ic;
 

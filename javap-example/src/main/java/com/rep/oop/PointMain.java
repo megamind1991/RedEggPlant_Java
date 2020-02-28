@@ -1,6 +1,6 @@
 package com.rep.oop;
 
-import java.awt.Point;
+import java.awt.*;
 
 public class PointMain {
     public static void main(String[] arguments) {

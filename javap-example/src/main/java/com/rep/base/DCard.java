@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 
 public class DCard {
     // execute application
-    public static void main(String[] args) {// w w w. j a v a 2 s . c o m
+    public static void main(String[] args) {
         DeckOfCards myDeckOfCards = new DeckOfCards();
         myDeckOfCards.shuffle(); // place Cards in random order
 

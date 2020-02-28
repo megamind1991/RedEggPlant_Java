@@ -1,9 +1,8 @@
 package com.rep.base;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import java.awt.Graphics; //handle the display
-import javax.swing.JPanel;
+import java.awt.*;
+
+import javax.swing.*;
 
 class Shapes extends JPanel {
     private int choice; // user's choice of which shape to draw

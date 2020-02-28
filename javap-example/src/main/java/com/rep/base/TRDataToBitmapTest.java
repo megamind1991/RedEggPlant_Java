@@ -3,8 +3,6 @@ package com.rep.base;
 import java.io.File;
 import java.io.IOException;
 
-import com.rep.base.BitmapEncoder;
-
 public class TRDataToBitmapTest {
     private byte[] makeImage() {
         byte[] result = null;

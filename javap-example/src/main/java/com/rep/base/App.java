@@ -1,8 +1,5 @@
 package com.rep.base;
 
-import javax.swing.*;
-import java.util.Scanner;
-
 /**
  * Hello world!
  */

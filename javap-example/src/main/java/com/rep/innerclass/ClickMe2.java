@@ -3,9 +3,7 @@ package com.rep.innerclass;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class ClickMe2 extends JFrame {
     public static void main(String[] args) {

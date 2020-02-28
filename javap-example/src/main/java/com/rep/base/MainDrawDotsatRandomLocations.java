@@ -1,8 +1,8 @@
 package com.rep.base;
 
-import java.awt.Graphics;
+import java.awt.*;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 
 class DrawDotsatRandomLocations extends JComponent implements Runnable {
     Thread t;// w w w .ja v a 2s . com

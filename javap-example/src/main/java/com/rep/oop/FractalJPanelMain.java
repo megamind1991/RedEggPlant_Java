@@ -1,15 +1,8 @@
 package com.rep.oop;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
+import java.awt.*;
 
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 class FractalJPanel extends JPanel {
     private Color color; // stores color used to draw fractal

@@ -1,9 +1,8 @@
 package com.rep.oop;
 
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class SierpinskiMain extends JFrame {
     public static final int WINDOW_SIZE = 512;
