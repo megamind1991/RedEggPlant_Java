@@ -1,7 +1,7 @@
 package com.rep.innerclass;
 
 /**
- * 在静态方法内定义内部类
+ * 在静态方法内定义内部类  四种内部类https://blog.csdn.net/king_cannon_fodder/article/details/81013260
  */
 public class LocalClassExample {
 
