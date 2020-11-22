@@ -11,11 +11,19 @@ import javax.swing.*;
 public class AnonymousClassMain {
 
     public static void main(String[] args) {
+
+
         String tickMessage = "Tick...";
         String tockMessage = "Tock...";
         Timer t = new Timer(1000, new ActionListener() {
             private boolean tick = true;
 
+            /**
+              * @Description : 功能说明
+              * @Author : 大刘
+              * @Param args
+              * @Return : void
+              */
             public void actionPerformed(ActionEvent event) {
                 if (tick) {
                     System.out.println(tickMessage);

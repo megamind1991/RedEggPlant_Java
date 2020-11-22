@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatterProjectSettings">
+    <option name="projectSpecificProfile">
+      <ProjectSpecificProfile>
+        <option name="pathToConfigFileJava" value="$USER_HOME$/Desktop/EWT/Java-Formatter.xml" />
+        <option name="selectedJavaProfile" value="hbasesoft" />
+      </ProjectSpecificProfile>
+    </option>
+  </component>
+</project>

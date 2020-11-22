@@ -60,21 +60,26 @@ public class Anagram {
     }
 
     public static void main(String[] args) {
-        String string1 = "Cosmo and Laine:";
-        String string2 = "Maid, clean soon!";
+//        String string1 = "Cosmo and Laine:";
+//        String string2 = "Maid, clean soon!";
+//
+//        System.out.println();
+//        System.out.println("Testing whether the following " + "strings are anagrams:");
+//        System.out.println("    String 1: " + string1);
+//        System.out.println("    String 2: " + string2);
+//        System.out.println();
+//
+//        if (areAnagrams(string1, string2)) {
+//            System.out.println("They ARE anagrams!");
+//        }
+//        else {
+//            System.out.println("They are NOT anagrams!");
+//        }
+//        System.out.println();
 
-        System.out.println();
-        System.out.println("Testing whether the following " + "strings are anagrams:");
-        System.out.println("    String 1: " + string1);
-        System.out.println("    String 2: " + string2);
-        System.out.println();
-
-        if (areAnagrams(string1, string2)) {
-            System.out.println("They ARE anagrams!");
+        String[] stdCodeArray = "JH0105|SDJH0105|SDJH0106|SDJH0107|SDJH0108".split("\\|");
+        for (String s : stdCodeArray) {
+            System.out.println(s);
         }
-        else {
-            System.out.println("They are NOT anagrams!");
-        }
-        System.out.println();
     }
 }

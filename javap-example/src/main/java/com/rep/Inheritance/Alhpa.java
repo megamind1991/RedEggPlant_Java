@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class Alhpa {
+    // 这是个，。。。八百年
     private String str1 = "1";
 
     String str2 = "2";

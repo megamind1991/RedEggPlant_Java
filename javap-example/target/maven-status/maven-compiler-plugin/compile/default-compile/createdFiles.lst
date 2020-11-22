@@ -32,12 +32,16 @@ com\rep\interfaces\SimpleTimeClient.class
 com\rep\oop\VectorAdditionMain.class
 com\rep\innerclass\Class2.class
 com\rep\javabean\PersonExp.class
+com\rep\Inheritance\ShapeInheritanceClass.class
 com\rep\innerclass\HelloWorldAnonymousClasses.class
 com\rep\innerclass\ExtendClass2.class
 com\rep\interfaces\SortByRankThenSuit.class
 com\rep\base\CommandList$2.class
 com\rep\oop\MySuperClass.class
 com\rep\exception\MultipleExceptionMain.class
+com\rep\Inheritance\ShapVO.class
+com\rep\Inheritance\FieldSuperVo.class
+com\rep\Inheritance\YuanXing.class
 com\rep\innerclass\InnerHelloHello.class
 com\rep\javabean\IntrospectorGetBeanInfoMain.class
 com\rep\innerclass\Problem.class
@@ -66,6 +70,7 @@ com\rep\interfaces\Card.class
 com\rep\javabean\PropertyChangeSupportMain.class
 com\rep\base\MainDrawDotsatRandomLocations.class
 com\rep\oop\SimpleThisTimeMain.class
+com\rep\Inheritance\FieldSubVO.class
 com\rep\innerclass\FunctionalityInnerClassMain.class
 com\rep\innerclass\HelloWorldAnonymousClasses$HelloWorld.class
 com\rep\exception\ChainedExceptionMain.class
@@ -108,6 +113,7 @@ com\rep\exception\OpenFileMain.class
 com\rep\interfaces\ComparableInterfaceMain.class
 com\rep\base\Level1.class
 com\rep\oop\VisibilityAndTheConceptOfFields.class
+com\rep\Inheritance\Wooden.class
 com\rep\exception\MyNoRunException.class
 com\rep\oop\MyClass.class
 com\rep\oop\TestClass.class
@@ -116,6 +122,7 @@ com\rep\exception\MyException.class
 com\rep\hashcode\ObjectHashMain.class
 com\rep\interfaces\TickTockInner.class
 com\rep\oop\CloneMain.class
+com\rep\Inheritance\SupperMethodClass.class
 com\rep\statictest\SingletonClass.class
 com\rep\exception\QuotientWithThrowMain.class
 com\rep\interfaces\Team.class
@@ -128,6 +135,7 @@ com\rep\base\RandomTest.class
 com\rep\interfaces\ComparablePerson.class
 com\rep\interfaces\WithNestedClassAndInnerConstantFieldMain.class
 com\rep\oop\ExplicitlyConstructorMain.class
+com\rep\Inheritance\Alhpa.class
 com\rep\javabean\IntrospectorGetBeanInfoGetPropertyMain.class
 com\rep\statictest\StaticConvenienceMethodMain.class
 com\rep\innerclass\HelloWorldAnonymousClasses$2.class
@@ -140,6 +148,7 @@ com\rep\base\TRDataToBitmapTest.class
 com\rep\exception\MyNoRunException2.class
 com\rep\oop\MyInterfaceMain.class
 com\rep\interfaces\Card$Suit.class
+com\rep\Inheritance\SuperVO.class
 com\rep\base\SetSpecialBit.class
 com\rep\interfaces\Player.class
 com\rep\interfaces\WithNestedClassAndInnerConstantFieldWalkable$1.class
@@ -179,6 +188,9 @@ com\rep\interfaces\TimeClient.class
 com\rep\oop\Address.class
 com\rep\innerclass\ClickMe2$1.class
 com\rep\exception\ExceptionStackTraceMain.class
+com\rep\Inheritance\FieldInheritance.class
+com\rep\Inheritance\Stick.class
+com\rep\Inheritance\AlphaTwo.class
 com\rep\innerclass\VariableAccessInner$InnerClass.class
 com\rep\base\DrawDotsatRandomLocations.class
 com\rep\interfaces\Main.class
@@ -192,6 +204,7 @@ com\rep\oop\MyBase.class
 com\rep\oop\Time2.class
 com\rep\oop\Team.class
 com\rep\oop\Account.class
+com\rep\Inheritance\Changfangxing.class
 com\rep\javabean\MyBean.class
 com\rep\base\Command.class
 com\rep\interfaces\StandardDeck.class
@@ -202,8 +215,10 @@ com\rep\interfaces\ImplementMultiInterfaceMain.class
 com\rep\javabean\ImmutableJavaBeanToXmlMain.class
 com\rep\base\IntTest.class
 com\rep\base\DichotomicSearchMain.class
+com\rep\Inheritance\ShapUtil.class
 com\rep\oop\HannuotaMain.class
 com\rep\innerclass\ExtendClass2$InnerClass2.class
+com\rep\Inheritance\SubVO.class
 com\rep\base\Direction.class
 com\rep\javabean\PersonEnhancementsMain.class
 com\rep\accesslvl\VarAccessLvlMain.class
